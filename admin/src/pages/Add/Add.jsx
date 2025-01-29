@@ -10,7 +10,7 @@ const Add = ({url}) => {
     name:"",
     description:"",
     price:"",
-    category:"Salad"
+    category:"Chicken Noodles"
   })
   const onChangeHandler = (event) => {
     const name = event.target.name;
@@ -36,7 +36,7 @@ const Add = ({url}) => {
             name:"",
             description:"",
             price:"",
-            category:"Salad"
+            category:"Chicken Noodles"
         })
         setImage(false);
         toast.success(response.data.message);
@@ -69,20 +69,30 @@ const Add = ({url}) => {
                 <div className="add-category flex-col">
                     <p>Product category</p>
                     <select onChange={onChangeHandler} name="category" id="">
-                        <option value="Salad">Salad</option>
-                        <option value="Rolls">Rolls</option>
-                        <option value="Deserts">Deserts</option>
-                        <option value="Sandwich">Sandwich</option>
-                        <option value="Cake">Cake</option>
-                        <option value="Pure Veg">Pure Veg</option>
-                        <option value="Pasta">Pasta</option>
-                        <option value="Noodles">Noodles</option>
+                        <option value="Chicken Noodles">Chicken Noodles</option>
+                        <option value="Chicken Rice">Chicken Rice</option>
+                        <option value="Chicken Soup">Chicken Soup</option>
+                        <option value="Chicken Starter">Chicken Starter</option>
+                        <option value="Egg Rice">Egg Rice</option>
+                        <option value="Paneer Rice">Paneer Rice</option>
+                        <option value="Paneer Starter">Paneer Starter</option>
+                        <option value="Paneer Noodles">Paneer Noodles</option>
+                        <option value="Shawarma in Plate">Shawarma in Plate</option>
+                        <option value="Veg Noodles">Veg Noodles</option>
+                        <option value="Veg Rice">Veg Rice</option>
+                        <option value="Veg Roll">Veg Roll</option>
+                        <option value="Veg Soup">Veg Soup</option>
+                        <option value="Veg Starter">Veg Starter</option>
+                        <option value="Veg Soup">Veg Soup</option>
+                        <option value="Veg Soup">Veg Soup</option>
+                        <option value="Veg Soup">Veg Soup</option>
+
 
                     </select>
                 </div>
                 <div className="add-price flex-col">
                     <p>Product price</p>
-                    <input onChange={onChangeHandler} value={data.price} type="Number" name="price" placeholder='$20'/>
+                    <input onChange={onChangeHandler} value={data.price} type="Number" name="price" placeholder='₹20'/>
                 </div>
             </div>
             <button type='submit' className='add-btn'>ADD</button>

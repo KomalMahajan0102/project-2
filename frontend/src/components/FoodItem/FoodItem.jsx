@@ -9,11 +9,11 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 const FoodItem = ({id,name,price,description,image}) => {
   
-  const {cartItems,addToCart,removeFromCart}=useContext(StoreContext)
+  const {cartItems,addToCart,removeFromCart,url}=useContext(StoreContext)
   return (
     <div className='food-item'>
       <div className="food-item-img-container">
-        <img className="food-item-image"  src={image} alt="" />
+        <img className="food-item-image"  src={url+"/images/"+image} alt="" />
           <div className='like-icon'><FaHeart style={{color:"red",fontSize: "1.5em"}}/></div>
         {!cartItems[id]
           ?

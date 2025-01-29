@@ -6,7 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -28,7 +28,7 @@ function Header({ setShowLogin }) {
         localStorage.removeItem("token");
         setToken("");
       
-        navigate("/");
+        Navigate("/");
       }
     return (
         <div className="container-fluid fd-nav " >

@@ -44,8 +44,8 @@ function Header({ setShowLogin }) {
 
                             <Link onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""} to="/"> Home</Link>
                             <Link onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""} to="/menu">Menu</Link>
-                            <Link onClick={() => setMenu("blog")} className={menu === "blog" ? "active" : ""} to="#blog">Blog</Link>
-                            <Link  onClick={() => setMenu("review")} className={menu === "review" ? "active" : ""} to="#review">Review</Link>
+                            {/* <Link onClick={() => setMenu("blog")} className={menu === "blog" ? "active" : ""} to="#blog">Blog</Link>
+                            <Link  onClick={() => setMenu("review")} className={menu === "review" ? "active" : ""} to="#review">Review</Link> */}
                             <Link onClick={() => setMenu("about")} className={menu === "about" ? "active" : ""} to="/about">About</Link>
 
                      </Nav>

@@ -56,7 +56,7 @@ const HomePage = ({setShowLogin}) => {
 
     return (
         <>
-            <div className='homepage'>
+            <div className='homepage' >
             <div className='header'>                   
                     <div id='home '>
                         <div className="video-container container-fluid">

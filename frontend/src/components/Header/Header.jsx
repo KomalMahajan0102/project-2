@@ -6,7 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -28,8 +28,9 @@ function Header({ setShowLogin }) {
         localStorage.removeItem("token");
         setToken("");
       
-        Navigate("/");
+        navigate("/");
       }
+    const navigate=useNavigate();
     return (
         <div className="container-fluid fd-nav " >
             <Navbar collapseOnSelect expand="lg" className="">
@@ -58,7 +59,7 @@ function Header({ setShowLogin }) {
                                 <div className="navbar-profile">
                                     <img className='profile-img' src={profile_icon2} alt="" />
                                     <ul className="nav-profile-dropdown">
-                                        <li ><img src={bag_icon} alt="" /><p>Orders</p></li>
+                                        <li onClick={()=>{navigate("/myorders")}} ><img src={bag_icon} alt="" /><p>Orders</p></li>
                                         <hr />
                                         <li onClick={logout}><img src={logout_icon} alt="" /><p>Logout</p></li>
                                     </ul>

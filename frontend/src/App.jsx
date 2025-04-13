@@ -14,6 +14,7 @@ import Header from './components/Header/Header';
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import './App.css'
 import { ToastContainer } from 'react-toastify';
+import MyOrders from './pages/MyOrders/MyOrders';
 function App() {
   const [count, setCount] = useState(0)
   const [showLogin,setShowLogin]=useState(false)
@@ -23,6 +24,7 @@ function App() {
       <BrowserRouter>
         <StoreContextProvider>
           {showLogin?<LoginPopup setShowLogin={setShowLogin}></LoginPopup>:<></>}
+          <ToastContainer />
           
           <Header setShowLogin={setShowLogin}></Header>
           
@@ -32,6 +34,7 @@ function App() {
             <Route path='/menu' element={<MenuPage setShowLogin={setShowLogin}/>} />
             <Route path='/cart' element={<Cart setShowLogin={setShowLogin}/>} />
             <Route path="/order" element={<PlaceOrder setShowLogin={setShowLogin}/>} />
+            <Route path="/myorders" element={<MyOrders setShowLogin={setShowLogin}/>} />
           </Routes>
         </StoreContextProvider>
       </BrowserRouter>

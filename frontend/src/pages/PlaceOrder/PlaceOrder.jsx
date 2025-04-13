@@ -9,6 +9,9 @@ import { food_list } from "../../assets/assets";
 
 const PlaceOrder = ({ setShowLogin }) => {
     const navigate = useNavigate();
+    const verifyOrder=async()=>{
+        navigate("/myorders");
+    }
 
     const { getTotalCartAmount, token, food_list, cartItems, url } =
         useContext(StoreContext);
@@ -67,6 +70,7 @@ const PlaceOrder = ({ setShowLogin }) => {
                 theme: {
                     color: '#F37254'
                 },
+                handler:verifyOrder,
             };
             const rzp = new window.Razorpay(options);
             rzp.open();
@@ -80,7 +84,16 @@ const PlaceOrder = ({ setShowLogin }) => {
         }
 
     }
-
+    useEffect(()=>{
+        if(!token){
+          toast.error("Please Login first")
+          navigate("/cart")
+        }
+        else if(getTotalCartAmount()===0){
+          toast.error("Please Add Items to Cart");
+          navigate("/cart")
+        }
+      },[token])
 
 
 

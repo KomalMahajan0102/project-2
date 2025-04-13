@@ -38,7 +38,7 @@ const Cart = ({ setShowLogin }) => {
                 {food_list.map((item, index) => {
                     if (cartItems[item._id] > 0) {
                         return (
-                            <div>
+                            <div key={item._id}>
                                 <div className="cart-items-title cart-items-item">
 
                                     <img src={url+"/images/"+item.image} alt="" />
@@ -62,17 +62,17 @@ const Cart = ({ setShowLogin }) => {
                     <div>
                         <div className="cart-total-details">
                             <p>Subtotals</p>
-                            <p>${getTotalCartAmount()}</p>
+                            <p>₹{getTotalCartAmount()}</p>
                         </div>
                         <hr />
                         <div className="cart-total-details">
                             <p>Delivery Fee</p>
-                            <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
+                            <p>₹{getTotalCartAmount() === 0 ? 0 : 20}</p>
                         </div>
                         <hr />
                         <div className="cart-total-details">
                             <b>Total</b>
-                            <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
+                            <b>₹{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 20}</b>
                         </div>
                     </div>
                     <button onClick={() => navigate('/order')}>PROCEED TO CHECKOUT</button>
